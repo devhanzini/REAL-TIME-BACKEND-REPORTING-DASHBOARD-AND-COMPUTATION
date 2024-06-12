@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product ID Search</title>
+</head>
+<body>
+
+<script>
+async function getProductDetails() {
+    const product_id = prompt("Please enter your product ID:");
+    if (product_id === null || product_id === "") {
+        alert("Invalid product ID. Please try again.");
+        return;
+    }
+    
+    try {
+        const response = await fetch(`http://10.0.20.63:3000/search?product_id=${product_id}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log("Product details:", data);
+        // Handle the retrieved product details as needed
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while fetching product details. Please try again later.");
+    }
+}
+
+// Call the function when the page loads or when a button is clicked
+// You can modify this based on your UI design
+document.addEventListener("DOMContentLoaded", getProductDetails);
+</script>
+
+</body>
+</html>

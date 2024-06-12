@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="IFRS.CSS">
+    <title>IFRS</title>
+</head>
+<body>
+    
+    <div class="main">
+
+        <nav>
+            <div class="logo">
+                <img src="IFRS2.PNG">
+                <P>INTERNATIONAL FINANCIAL REPORTING STANDARD</P>
+            </div>
+            <div class="nav-links">
+                <li><h3><a href="">SUMMARY</h3></a></li>
+
+            <ul>
+                <li><h3><a href="http://localhost:8080/IFRS.PHP">ASSET</a></h3></li>
+                <li><h3><a href="http://localhost:8080/IFRS.PHP">LIABILITIES</a></h3></li>
+                <li><h3><a href="http://localhost:8080/IFRS2.PHP">IFRSPROFIT</a></h3></li>
+                <li><h3><a href="http://localhost:8080/IFRS2.PHP">IFRSLOSS</a></h3></li>
+            </ul>
+            </div>
+            
+            </nav>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+<br>
+<script>
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const tableContainer = document.getElementById('table-container');
+    
+    // Function to render the data into an HTML table
+    async function renderTable(data) {
+        // Create a table element
+        const table = document.createElement('table');
+        table.classList.add('my-table-class'); // You can add your own class for styling
+    
+        // Create table header row
+        const headerRow = table.insertRow();
+        for (const key in data[0]) {
+            if (data[0].hasOwnProperty(key)) {
+                const headerCell = document.createElement('th');
+                headerCell.textContent = key;
+                headerRow.appendChild(headerCell);
+            }
+        }
+    
+        // Create table rows and cells
+        data.forEach(item => {
+            const row = table.insertRow();
+            for (const key in item) {
+                if (item.hasOwnProperty(key)) {
+                    const cell = row.insertCell();
+                    cell.textContent = item[key];
+                }
+            }
+        });
+    
+        // Append the table to the container
+        tableContainer.appendChild(table);
+    }
+    
+        // Your code here
+    });
+    
+    
+
+
+
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<button onclick="compute()">Compute</button>
+<script src="ifrs6.js"></script>
+      <h3 class="made_by">UC_HA.INX</h3>
+
+
+</body>
+</html>
